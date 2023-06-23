@@ -5,7 +5,7 @@ const InstagramPost = ({instaURL}) => {
 
   return (
     <div>
-  <InstagramEmbed url={instaURL} width={600} height={800} />
+  <InstagramEmbed url={instaURL} height={460} />
 </div>
   )
 }
