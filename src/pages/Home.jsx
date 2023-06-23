@@ -19,7 +19,7 @@ let drumCollections = Object.entries(rawPosts)
           <h2>{collection}</h2>
             <Grid container spacing={2}>
                 {items.map((item) => (
-                    <Grid item xs={12} sm={6} md={4} lg={3} key={item.href}>
+                    <Grid item xs={12} md={4} lg={4} key={item.href}>
                         <InstagramPost instaURL={item.href} />
                     </Grid>
                 ))}
