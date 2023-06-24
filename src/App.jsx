@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
@@ -12,7 +10,7 @@ function App() {
 	return (
 		<>
 			<div className='App'>
-				<main id='main-content' className='p-0'>
+				<main id='main-content' className=''>
 					<div>
 						<Routes>
 							<Route path='/' element={<Home />} />
