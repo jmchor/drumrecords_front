@@ -11,8 +11,8 @@ function App() {
 	return (
 		<>
 			<div className='App'>
-				<Navigation />
-				<main id='main-content' className=''>
+				<Navigation id='nav-bar' />
+				<main id='main-content'>
 					<div>
 						<Routes>
 							<Route path='/' element={<Homepage />} />
