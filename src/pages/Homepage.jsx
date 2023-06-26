@@ -26,7 +26,7 @@ const Homepage = () => {
 	if (randomRecord) {
 		return (
 			<div>
-				<Box minWidth='360px' className='mt-5 px-2' key={randomRecord._id}>
+				<Box minWidth='360px' className='mt-3 px-2' key={randomRecord._id}>
 					<Card>
 						<CardActionArea>
 							<CardContent>
