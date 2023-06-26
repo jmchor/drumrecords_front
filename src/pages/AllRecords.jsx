@@ -16,10 +16,10 @@ const AllRecords = () => {
     <div>
       {drumCollections.map(([collection, items]) => (
         <div key={collection} className="py-5">
-          <h2 className="text-2xl font-bold p-1">{collection}</h2>
+
           <Box className="flex justify-center items-center flex-wrap">
             {items.map((item) => (
-              <Box minWidth="360px" className="mt-5 px-2" key={item.href}>
+              <Box minWidth="360px" className="mt-3 px-2" key={item.href}>
                 <Card>
                   <CardActionArea>
                     <CardContent>
