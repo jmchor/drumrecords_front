@@ -53,7 +53,6 @@ body {
 .video-container {
 	display: flex;
 	justify-content: center;
-	width: 100%;
 }
 
 .instagram-post .video-container {
@@ -66,7 +65,7 @@ body {
 
 .expanded {
 	height: 90vh;
-	width: 40vw;
+	width: 60vw;
 }
 
 .shrink {
@@ -74,21 +73,28 @@ body {
 	width: 300px;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 375px) {
 	.expanded {
 		height: 80vh;
 		width: 100vw;
 	}
 }
 
-@media (max-width: 690px) {
+@media (min-width: 376px) and (max-width: 560px) {
+	.expanded {
+		height: 80vh;
+		width: 100vw;
+	}
+}
+
+@media (min-width: 561px) and (max-width: 690px) {
 	.expanded {
 		height: 80vh;
 		width: 80vw;
 	}
 }
 
-@media (max-width: 920px) {
+@media (min-width: 691px) and (max-width: 920px) {
 	.expanded {
 		height: 80vh;
 		width: 60vw;
