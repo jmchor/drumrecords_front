@@ -6,19 +6,23 @@ body {
 	max-width: 100vw;
 	margin: 0 auto;
 	text-align: center;
+	height: 100vh;
 }
 
-.logo {
-	height: 6em;
-	padding: 1.5em;
-	will-change: filter;
-	transition: filter 300ms;
+#nav-bar {
+	max-width: 1280px;
+	margin: 0 auto;
 }
-.logo:hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
+
+#search-bar {
+	max-width: 1280px;
+	margin: 0 auto;
+	z-index: 9;
 }
-.logo.react:hover {
-	filter: drop-shadow(0 0 2em #61dafbaa);
+
+#main-content {
+	margin: 0 auto;
+	padding-bottom: 20px;
 }
 
 @keyframes logo-spin {
@@ -70,7 +74,7 @@ body {
 
 .shrink {
 	height: 240px;
-	width: 300px;
+	width: 360px;
 }
 
 @media (max-width: 375px) {
