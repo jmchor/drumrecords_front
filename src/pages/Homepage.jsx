@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import InstagramRandomPost from '../components/InstagramRandomPost.jsx';
-
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { CardActionArea } from '@mui/material';
 
 const Homepage = () => {
 	const API = import.meta.env.VITE_API;
@@ -23,7 +26,17 @@ const Homepage = () => {
 	if (randomRecord) {
 		return (
 			<div>
-				<InstagramRandomPost instaURL={randomRecord.url} />
+				<Box minWidth='360px' className='mt-5 px-2' key={randomRecord._id}>
+					<Card>
+						<CardActionArea>
+							<CardContent>
+								<Box className='flex justify-center items-center flex-col'>
+									<InstagramRandomPost instaURL={randomRecord.url} />
+								</Box>
+							</CardContent>
+						</CardActionArea>
+					</Card>
+				</Box>
 			</div>
 		);
 	}
