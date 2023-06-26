@@ -12,7 +12,7 @@ const InstagramPost = ({ instaURL }) => {
 	const videoClassName = isVideoExpanded ? 'expanded' : '';
 
 	return (
-		<div onClick={handleToggleSize} className='p-5'>
+		<div onClick={handleToggleSize} className=''>
 			<Button className='enlarge-button ' onClick={handleToggleSize}>
 				{isVideoExpanded ? 'Shrink Video' : 'Enlarge Video'}
 			</Button>
