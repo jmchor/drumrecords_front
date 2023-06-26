@@ -1,7 +1,7 @@
 
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-
+import Navigation from './components/Navigation';
 // Pages
 
 import AllRecords from './pages/AllRecords';
@@ -11,6 +11,7 @@ function App() {
 	return (
 		<>
 			<div className='App'>
+				<Navigation />
 				<main id='main-content' className=''>
 					<div>
 						<Routes>
