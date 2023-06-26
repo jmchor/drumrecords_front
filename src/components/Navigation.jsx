@@ -22,8 +22,18 @@ const Navigation = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Pages
+        <a href="/" className="flex items-center">
+          Random Drum Record
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="/all-records" className="flex items-center">
+          All Records
         </a>
       </Typography>
       <Typography
@@ -33,17 +43,7 @@ const Navigation = () => {
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center">
-          Account
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          Blocks
+          About
         </a>
       </Typography>
       <Typography
@@ -60,18 +60,12 @@ const Navigation = () => {
   );
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-1">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          className="mr-4 cursor-pointer py-1.5 font-medium"
-        >
-          Material Tailwind
-        </Typography>
+    <Navbar id="nav-bar" className="mx-auto max-w-screen-xl py-2 lg:py-4">
+      <div className="container mx-auto flex items-center justify-center text-blue-gray-900">
+
         <div className="hidden lg:block">{navList}</div>
-        <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-          <span>Buy Now</span>
+        <Button variant="gradient" size="sm" className="hidden lg:inline-block px-5 mx-2">
+          <span>Admin Panel</span>
         </Button>
         <IconButton
           variant="text"
