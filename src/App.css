@@ -65,7 +65,7 @@ body {
 
 .expanded {
 	height: 90vh;
-	width: 60vw;
+	width: 40vw;
 }
 
 .shrink {
@@ -98,5 +98,19 @@ body {
 	.expanded {
 		height: 80vh;
 		width: 60vw;
+	}
+}
+
+@media (min-width: 921px) and (max-width: 1200px) {
+	.expanded {
+		height: 80vh;
+		width: 40vw;
+	}
+}
+
+@media (min-width: 1201px) {
+	.expanded {
+		height: 80vh;
+		width: 32vw;
 	}
 }
