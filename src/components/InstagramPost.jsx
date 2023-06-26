@@ -17,7 +17,7 @@ const InstagramPost = ({ instaURL }) => {
 				{isVideoExpanded ? 'Shrink Video' : 'Enlarge Video'}
 			</Button>
 			<div className='video-container flex justify-center content-center items-center mt-2'>
-      <InstagramEmbed url={instaURL} className={isVideoExpanded ? 'expanded' : 'shrink'} />
+				<InstagramEmbed url={instaURL} className={isVideoExpanded ? 'expanded' : 'shrink'} />
 			</div>
 		</div>
 	);
