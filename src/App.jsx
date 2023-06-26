@@ -4,7 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 
 // Pages
 
-import Home from './pages/Home';
+import AllRecords from './pages/AllRecords';
+import Homepage from './pages/Homepage';
 
 function App() {
 	return (
@@ -13,7 +14,8 @@ function App() {
 				<main id='main-content' className=''>
 					<div>
 						<Routes>
-							<Route path='/' element={<Home />} />
+							<Route path='/' element={<Homepage />} />
+							<Route path='/all-records' element={<AllRecords />} />
 						</Routes>
 					</div>
 				</main>
