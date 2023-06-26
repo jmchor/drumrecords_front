@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
 
-const Home = () => {
+const AllRecords = () => {
 	let drumCollections = Object.entries(rawPosts);
 
 
@@ -40,4 +40,4 @@ const Home = () => {
 
 };
 
-export default Home;
+export default AllRecords;
