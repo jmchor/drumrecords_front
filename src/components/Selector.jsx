@@ -10,7 +10,9 @@ const Selector = ({onCategoryChange, recordCollection, setRecordCollection}) => 
 
   const handleChange = (event) => {
     const selectedCategory = event.target.value;
-    setRecordCollection(recordCollection);
+    if (recordCollection != null) {
+    setRecordCollection(recordCollection);}
+
     setCategory(selectedCategory);
     onCategoryChange(selectedCategory);
   };
