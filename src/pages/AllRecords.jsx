@@ -1,43 +1,83 @@
-
+import { useState, useEffect } from 'react';
 import InstagramPost from '../components/InstagramPost.jsx';
 import rawPosts from '../drum_collections.json';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
+import axios from 'axios';
+import Selector from '../components/Selector.jsx';
 
 const AllRecords = () => {
-	let drumCollections = Object.entries(rawPosts);
+	const API = import.meta.env.VITE_API;
+
+  const [originalRecordCollection, setOriginalRecordCollection] = useState(null);
+	const [recordCollection, setRecordCollection] = useState(null);
+	const [isFiltered, setIsFiltered] = useState(false);
+	const [selectedCategory, setSelectedCategory] = useState('');
+
+	useEffect(() => {
+		axios
+			.get(`${API}/records`)
+			.then((response) => {
+				console.log(response.data);
+        setOriginalRecordCollection(response.data);
+				setRecordCollection(response.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
+
+	// Filter the record collections by category
+	useEffect(() => {
+		if (recordCollection && selectedCategory) {
+			let filteredRecords;
+			if (selectedCategory === 'Clear') {
+				filteredRecords = recordCollection;
+			} else {
+				filteredRecords = recordCollection.filter((record) => record.name === selectedCategory);
+			}
+			setRecordCollection(filteredRecords);
+			setIsFiltered(true);
+		}
+	}, [selectedCategory, originalRecordCollection]);
 
 
+	// Handle category change
+	const handleCategoryChange = (category) => {
+		setSelectedCategory(category);
 
+	};
 
-  return (
-    <div>
-      {drumCollections.map(([collection, items]) => (
-        <div key={collection} className="py-5">
-
-          <Box className="flex justify-center items-center flex-wrap">
-            {items.map((item) => (
-              <Box minWidth="360px" className="mt-3 px-2" key={item.href}>
-                <Card>
-                  <CardActionArea>
-                    <CardContent>
-                      <Box className="flex justify-center items-center flex-col">
-
-                        <InstagramPost instaURL={item.href} />
-                      </Box>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Box>
-            ))}
-          </Box>
-        </div>
-      ))}
-    </div>
-  );
-
+	if (recordCollection && originalRecordCollection) {
+		return (
+			<div>
+				<Selector onCategoryChange={handleCategoryChange} recordCollection={originalRecordCollection} setRecordCollection={setRecordCollection}/>
+				<Box className='flex justify-center items-center flex-wrap'>
+					{recordCollection.map((collection) => {
+						return (
+							<Box key={collection._id} className='flex justify-center items-center flex-wrap'>
+								{collection.records.map((record) => (
+									<Box minWidth='360px' className='mt-3 px-2' key={record._id}>
+										<Card>
+											<CardActionArea>
+												<CardContent>
+													<Box className='flex justify-center items-center flex-col'>
+														<InstagramPost instaURL={record.url} />
+													</Box>
+												</CardContent>
+											</CardActionArea>
+										</Card>
+									</Box>
+								))}
+							</Box>
+						);
+					})}
+				</Box>
+			</div>
+		);
+	}
 };
 
 export default AllRecords;
