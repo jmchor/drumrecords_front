@@ -1,4 +1,3 @@
-
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
@@ -11,23 +10,63 @@ import CreateRecord from './pages/CreateRecord';
 import UpdateRecord from './pages/UpdateRecord';
 import DeleteRecord from './pages/DeleteRecord';
 import UpdateProfile from './pages/UpdateProfile';
+import Login from './pages/Login';
+import IsPrivate from './components/IsPrivate';
 
 function App() {
 	return (
 		<>
 			<div className='App'>
 				<Navigation id='nav-bar' />
-				<main id='main-content'>
-						<Routes>
-							<Route path='/' element={<Homepage />} />
-							<Route path='/all-records' element={<AllRecords />} />
-							<Route path='/admin' element={<AdminPanel />} />
-							<Route path='/new-record' element={<CreateRecord />} />
-							<Route path='/update-record' element={<UpdateRecord />} />
-							<Route path='/delete-record' element={<DeleteRecord />} />
-							<Route path='/update-profile' element={<UpdateProfile />} />
-
-						</Routes>
+				<main className='flex justify-center ' id='main-content'>
+					<Routes>
+						<Route path='/' element={<Homepage />} />
+						<Route path='/all-records' element={<AllRecords />} />
+						<Route
+							path='/admin'
+							element={
+								<IsPrivate>
+									<AdminPanel />
+								</IsPrivate>
+							}
+						/>
+						<Route path='/login' element={<Login />} />
+						<Route
+							path='/new-record'
+							element={
+								<IsPrivate>
+									<CreateRecord />
+								</IsPrivate>
+							}
+						/>
+						<Route
+							path='/update-record'
+							element={
+								<IsPrivate>
+									{' '}
+									<UpdateRecord />
+								</IsPrivate>
+							}
+						/>
+						<Route
+							path='/delete-record'
+							element={
+								<IsPrivate>
+									{' '}
+									<DeleteRecord />
+								</IsPrivate>
+							}
+						/>
+						<Route
+							path='/update-profile'
+							element={
+								<IsPrivate>
+									{' '}
+									<UpdateProfile />
+								</IsPrivate>
+							}
+						/>
+					</Routes>
 				</main>
 			</div>
 		</>
