@@ -23,6 +23,8 @@ body {
 #main-content {
 	margin: 0 auto;
 	padding-bottom: 20px;
+	min-height: 90vh;
+	display: flex;
 }
 
 @keyframes logo-spin {
