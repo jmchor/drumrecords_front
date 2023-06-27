@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Navbar, MobileNav, Typography, Button, IconButton } from '@material-tailwind/react';
-import { Link } from 'react-router-dom';
+import { Navbar, MobileNav, Typography, IconButton } from '@material-tailwind/react';
+import { AuthContext } from '../context/auth.context';
+import { useContext } from 'react';
+import LogoutIcon from "@mui/icons-material/Logout";
+import Button from "@mui/material/Button";
+
 
 const Navigation = () => {
 	const [openNav, setOpenNav] = useState(false);
+	const { isLoggedIn, isLoading, logOutUser } = useContext(AuthContext);
 
 	useEffect(() => {
 		window.addEventListener('resize', () => window.innerWidth >= 960 && setOpenNav(false));
@@ -26,11 +31,24 @@ const Navigation = () => {
 					About
 				</a>
 			</Typography>
-			<Typography as='li' variant='small' color='blue-gray' className='p-1 font-normal'>
+			{isLoggedIn ? (<Typography as='li' variant='small' color='blue-gray' className='p-1 font-normal'>
 				<a href='/admin' className='flex items-center'>
 					Admin
 				</a>
-			</Typography>
+			</Typography>) : (<Typography as='li' variant='small' color='blue-gray' className='p-1 font-normal'>
+				<a href='/login' className='flex items-center'>
+					Admin
+				</a>
+			</Typography>) }
+
+			{isLoggedIn && (
+				<Typography as='li' variant='small' color='blue-gray' className='p-1 font-normal'>
+				<Button onClick={logOutUser}>
+					<LogoutIcon />
+				</Button>
+				</Typography>
+			) }
+
 		</ul>
 	);
 
@@ -70,10 +88,7 @@ const Navigation = () => {
 				</IconButton>
 			</div>
 			<MobileNav open={openNav}>
-				<div className='container mx-auto'>
-					{navList}
-
-				</div>
+				<div className='container mx-auto'>{navList}</div>
 			</MobileNav>
 		</Navbar>
 	);
