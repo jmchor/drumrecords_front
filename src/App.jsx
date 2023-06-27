@@ -6,6 +6,11 @@ import Navigation from './components/Navigation';
 
 import AllRecords from './pages/AllRecords';
 import Homepage from './pages/Homepage';
+import AdminPanel from './pages/AdminPanel';
+import CreateRecord from './pages/CreateRecord';
+import UpdateRecord from './pages/UpdateRecord';
+import DeleteRecord from './pages/DeleteRecord';
+import UpdateProfile from './pages/UpdateProfile';
 
 function App() {
 	return (
@@ -13,12 +18,16 @@ function App() {
 			<div className='App'>
 				<Navigation id='nav-bar' />
 				<main id='main-content'>
-					<div>
 						<Routes>
 							<Route path='/' element={<Homepage />} />
 							<Route path='/all-records' element={<AllRecords />} />
+							<Route path='/admin' element={<AdminPanel />} />
+							<Route path='/new-record' element={<CreateRecord />} />
+							<Route path='/update-record' element={<UpdateRecord />} />
+							<Route path='/delete-record' element={<DeleteRecord />} />
+							<Route path='/update-profile' element={<UpdateProfile />} />
+
 						</Routes>
-					</div>
 				</main>
 			</div>
 		</>
