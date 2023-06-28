@@ -31,7 +31,7 @@ const CreateRecord = () => {
 			setURL('');
 			setArtist('');
 			setSelectedCategory('');
-			navigate('/all-records');
+			navigate('/records');
 		});
 	};
 

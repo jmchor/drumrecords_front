@@ -30,7 +30,7 @@ const Login = () => {
         verifyUser();
 
         setTimeout(() => {
-            navigate("/admin");
+            navigate('/admin');
         }, 50);
       })
       .catch((err) => {
