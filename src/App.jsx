@@ -18,7 +18,7 @@ function App() {
 		<>
 			<div className='App'>
 				<Navigation id='nav-bar' />
-				<main className='flex justify-center ' id='main-content'>
+				<main className='py-5 justify-center ' id='main-content'>
 					<Routes>
 						<Route path='/' element={<Homepage />} />
 						<Route path='/all-records' element={<AllRecords />} />
