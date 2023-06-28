@@ -25,9 +25,9 @@ const Homepage = () => {
 
 	if (randomRecord) {
 		return (
-			<div>
+			<div className='flex justify-center'>
 
-				<Box minWidth='360px' className='mt-3 px-2' key={randomRecord._id}>
+				<Box minWidth='360px' className='mt-3 px-2 w-fit' key={randomRecord._id}>
 					<Card>
 						<CardActionArea>
 							<CardContent>
