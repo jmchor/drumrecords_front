@@ -1,10 +1,12 @@
 import Button from '@mui/material/Button';
 import Selector from '../components/Selector';
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const CreateRecord = () => {
 	const API = import.meta.env.VITE_API;
+	const navigate = useNavigate();
 
 	const [url, setURL] = useState('');
 	const [artist, setArtist] = useState('');
@@ -29,6 +31,7 @@ const CreateRecord = () => {
 			setURL('');
 			setArtist('');
 			setSelectedCategory('');
+			navigate('/all-records');
 		});
 	};
 
@@ -36,9 +39,9 @@ const CreateRecord = () => {
 		'rounded-md appearance-none relative block w-full px-3 py-2 my-4 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm';
 
 	return (
-		<div className='my-3'>
+		<div className='my-3 flex justify-center'>
 			<form className='flex flex-col mx-auto' onSubmit={handleSubmit}>
-				<h4 className='text-2xl text-slate-600 my-3'>Create Item</h4>
+				<h4 className='text-2xl text-slate-600 my-3'>Create Record</h4>
 				<label htmlFor='name' className='text-xl'>
 					URL
 				</label>
@@ -64,7 +67,10 @@ const CreateRecord = () => {
 					Category
 				</label>
 
+				<br />
+
 				<Selector onCategoryChange={handleCategoryChange} recordCollection={null} setRecordCollection={null} />
+				<br />
 
 				<div>
 					<Button variant='contained' type='submit' className='text-xl mt-3'>
