@@ -20,7 +20,7 @@ const Selector = ({onCategoryChange, recordCollection, setRecordCollection}) => 
   const categories = ["Fills", "Double Stroke Rolls", "Paradiddles", "Patterns", "Songs", "Techniques", "Stick Tricks", "Other", "Clear"]
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 650 }}>
       <FormControl sx={{ minWidth: '50%' }}>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>
         <Select
