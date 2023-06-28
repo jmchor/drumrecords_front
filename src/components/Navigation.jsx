@@ -87,9 +87,9 @@ const Navigation = () => {
 					)}
 				</IconButton>
 			</div>
-			<Collapse open={openNav}>
+			<MobileNav open={openNav}>
 				<div className='container mx-auto flex justify-center text-center'>{navList}</div>
-			</Collapse>
+			</MobileNav>
 		</Navbar>
 	);
 };
