@@ -35,15 +35,15 @@ const DeleteRecord = () => {
 		return (
 			<div>
 				<h1 className='text-3xl text-center'>Delete a Record</h1>
-				<Box className='flex justify-center items-center flex-wrap'>
+				<Box className='flex justify-center items-center flex-wrap gap-5'>
 					{allRecords.map((record) => {
 						return (
-							<Box key={record._id} className='flex flex-col justify-center items-center flex-wrap'>
-								<Card sx={{ maxWidth: 345 }}>
+							<Box key={record._id} className='flex flex-col justify-center items-center flex-wrap gap-5'>
+								<Card sx={{ width: 450 }}>
 									<CardActionArea>
 										<CardContent>
 											<Box className='flex justify-center items-center flex-col'>
-                      <InstagramDeletePost instaURL={record.url} />
+												<InstagramDeletePost instaURL={record.url} />
 											</Box>
 										</CardContent>
 									</CardActionArea>
