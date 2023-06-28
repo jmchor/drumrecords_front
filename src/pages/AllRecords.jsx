@@ -52,14 +52,14 @@ const AllRecords = () => {
 
 	if (recordCollection && originalRecordCollection) {
 		return (
-			<div>
+			<div className='flex justify-center flex-col items-center'>
 				<Selector onCategoryChange={handleCategoryChange} recordCollection={originalRecordCollection} setRecordCollection={setRecordCollection}/>
-				<Box className='flex justify-center items-center flex-wrap'>
+				<Box className='flex justify-center items-center flex-wrap w-3/4'>
 					{recordCollection.map((collection) => {
 						return (
 							<Box key={collection._id} className='flex justify-center items-center flex-wrap'>
 								{collection.records.map((record) => (
-									<Box minWidth='360px' className='mt-3 px-2' key={record._id}>
+									<Box  className='mt-3 px-2' key={record._id}>
 										<Card>
 											<CardActionArea>
 												<CardContent>
