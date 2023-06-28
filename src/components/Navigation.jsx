@@ -22,7 +22,7 @@ const Navigation = () => {
 				</a>
 			</Typography>
 			<Typography as='li' variant='small' color='blue-gray' className='p-1 font-normal'>
-				<a href='/all-records' className='flex items-center justify-center'>
+				<a href='/records' className='flex items-center justify-center'>
 					All Records
 				</a>
 			</Typography>

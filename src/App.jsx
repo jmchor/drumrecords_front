@@ -21,7 +21,7 @@ function App() {
 				<main className='py-5 justify-center ' id='main-content'>
 					<Routes>
 						<Route path='/' element={<Homepage />} />
-						<Route path='/all-records' element={<AllRecords />} />
+						<Route path='/records' element={<AllRecords />} />
 						<Route
 							path='/admin'
 							element={
