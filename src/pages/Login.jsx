@@ -11,14 +11,18 @@ const Login = () => {
 	const [password, setPassword] = useState('');
 	const [errorMessage, setErrorMessage] = useState(undefined);
 	const [message, setMessage] = useState('Spinning up the servers...');
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const navigate = useNavigate();
 
 	const { storeToken, verifyUser } = useContext(AuthContext);
 
 	const handleLoginSubmit = (e) => {
+
+
 		e.preventDefault();
+
+		setIsLoading(true);
 
 		const loginBody = { loginName, password };
 
