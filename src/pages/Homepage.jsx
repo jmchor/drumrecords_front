@@ -6,7 +6,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
 import { AuthContext } from '../context/auth.context';
-import { MoonLoader } from 'react-spinners';
+import { PacmanLoader } from 'react-spinners';
 
 const Homepage = () => {
 	const API = import.meta.env.VITE_API;
@@ -41,7 +41,7 @@ const Homepage = () => {
 		return (
 			<section id='main-loader' className="flex justify-center items-center w-in ">
 				<div id='main-section' className='p-4 my-4 flex flex-col gap-4 justify-center items-center w-100'>
-					<MoonLoader color='#1976D2' size={30} />
+					<PacmanLoader color='#1976D2' size={30} />
 
 					<p>{message}</p>
 				</div>

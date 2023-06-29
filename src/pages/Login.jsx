@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from '../context/auth.context';
-import { MoonLoader } from 'react-spinners';
+import { PacmanLoader } from 'react-spinners';
 import Button from "@mui/material/Button";
 
 
@@ -57,7 +57,7 @@ const Login = () => {
 		return (
 			<section id='main-loader' className="flex justify-center items-center w-in ">
 				<div id='main-section' className='p-4 my-4 flex flex-col gap-4 justify-center items-center w-100'>
-					<MoonLoader color='#1976D2' size={30} />
+					<PacmanLoader color='#1976D2' size={30} />
 
 					<p>{message}</p>
 				</div>
