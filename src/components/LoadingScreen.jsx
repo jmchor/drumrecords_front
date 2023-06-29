@@ -20,10 +20,10 @@ const LoadingScreen = ({ message, setMessage }) => {
 			await updateMessage('Almost there...', 4000);
 			await updateMessage('What do you call a magic dog?', 3000);
 			await updateMessage('A Labracadabrador.', 3000);
-			await updateMessage('I know, I know, I\'m hilarious.', 3000);
-			await updateMessage('Just a few more seconds...', 3000);
+			await updateMessage('I know, I know, I\'m hilarious.', 4000);
+			await updateMessage('Just a few more seconds...', 5000);
 			await updateMessage('I\'m sure you\'re getting bored by now...', 3000);
-			await updateMessage('I\'m sorry, I\'m doing my best...', 3000);
+			await updateMessage('I\'m sorry, I\'m doing my best...', 7000);
 			await updateMessage('I\'m just a simple loading screen...', 3000);
 		};
 

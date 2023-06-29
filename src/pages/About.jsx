@@ -68,7 +68,7 @@ const About = () => {
 
 			<p>
 				If you'd like to dive into the backend code powering drumRecords, please visit this{' '}
-				<a className='text-slate-800' href='https://github.com/jcmhor/drumrecords_back'>
+				<a className='text-slate-800' href='https://github.com/jmchor/drumrecords_back' target='_blank' rel='noreferrer'>
 					<strong>GitHub repository</strong>
 				</a>
 				.
