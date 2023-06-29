@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/auth.context";
+import { AuthContext } from '../context/auth.context';
+import { MoonLoader } from 'react-spinners';
 import Button from "@mui/material/Button";
 
 
@@ -10,8 +11,11 @@ const Login = () => {
     const API = import.meta.env.VITE_API;
   const [loginName, setLoginName] = useState("");
   const [password, setPassword] = useState("");
-
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const [message, setMessage] = useState('Spinning up the servers...');
+  const [isLoading, setIsLoading] = useState(true);
+
+
 
   const navigate = useNavigate();
 
@@ -28,6 +32,8 @@ const Login = () => {
         storeToken(res.data.authToken);
 
         verifyUser();
+        setIsLoading(false);
+					setMessage('Spinning up the servers...');
 
         setTimeout(() => {
             navigate('/admin');
@@ -38,6 +44,27 @@ const Login = () => {
         setErrorMessage(err.response.data.errorMessage)
       });
   };
+
+
+  if (isLoading) {
+		setTimeout(() => {
+			setMessage('This might take a moment ...');
+			setTimeout(() => {
+				setMessage('So, how is your day going? ...');
+			}, 2000);
+		}, 2000);
+
+		return (
+			<section id='main-loader' className="flex justify-center items-center w-in ">
+				<div id='main-section' className='p-4 my-4 flex flex-col gap-4 justify-center items-center w-100'>
+					<MoonLoader color='#1976D2' size={30} />
+
+					<p>{message}</p>
+				</div>
+			</section>
+		);
+	}
+
 
   // Store all UI classes into a reusable class variable
   const fixedInputClass =

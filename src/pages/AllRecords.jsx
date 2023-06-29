@@ -7,22 +7,30 @@ import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
 import axios from 'axios';
 import Selector from '../components/Selector.jsx';
+import { AuthContext } from '../context/auth.context';
+import { MoonLoader } from 'react-spinners';
 
 const AllRecords = () => {
 	const API = import.meta.env.VITE_API;
 
-  const [originalRecordCollection, setOriginalRecordCollection] = useState(null);
+	const [originalRecordCollection, setOriginalRecordCollection] = useState(null);
 	const [recordCollection, setRecordCollection] = useState(null);
 	const [isFiltered, setIsFiltered] = useState(false);
 	const [selectedCategory, setSelectedCategory] = useState('');
+	const [message, setMessage] = useState('Spinning up the servers...');
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
+		setIsLoading(true);
+
 		axios
 			.get(`${API}/records`)
 			.then((response) => {
 				console.log(response.data);
-        setOriginalRecordCollection(response.data);
+				setOriginalRecordCollection(response.data);
 				setRecordCollection(response.data);
+				setIsLoading(false);
+				setMessage('Spinning up the servers...');
 			})
 			.catch((err) => {
 				console.log(err);
@@ -43,23 +51,44 @@ const AllRecords = () => {
 		}
 	}, [selectedCategory, originalRecordCollection]);
 
-
 	// Handle category change
 	const handleCategoryChange = (category) => {
 		setSelectedCategory(category);
-
 	};
+
+	if (isLoading) {
+		setTimeout(() => {
+			setMessage('This might take a moment ...');
+			setTimeout(() => {
+				setMessage('So, how is your day going? ...');
+			}, 2000);
+		}, 2000);
+
+		return (
+			<section id='main-loader' className='flex justify-center items-center w-in '>
+				<div id='main-section' className='p-4 my-4 flex flex-col gap-4 justify-center items-center w-100'>
+					<MoonLoader color='#1976D2' size={30} />
+
+					<p>{message}</p>
+				</div>
+			</section>
+		);
+	}
 
 	if (recordCollection && originalRecordCollection) {
 		return (
 			<div className='flex justify-center flex-col items-center'>
-				<Selector onCategoryChange={handleCategoryChange} recordCollection={originalRecordCollection} setRecordCollection={setRecordCollection}/>
+				<Selector
+					onCategoryChange={handleCategoryChange}
+					recordCollection={originalRecordCollection}
+					setRecordCollection={setRecordCollection}
+				/>
 				<Box className='flex justify-center items-center flex-wrap w-3/4'>
 					{recordCollection.map((collection) => {
 						return (
 							<Box key={collection._id} className='flex justify-center items-center flex-wrap'>
 								{collection.records.map((record) => (
-									<Box  className='mt-3 px-2' key={record._id}>
+									<Box className='mt-3 px-2' key={record._id}>
 										<Card>
 											<CardActionArea>
 												<CardContent>
