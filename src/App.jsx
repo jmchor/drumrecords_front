@@ -12,6 +12,7 @@ import DeleteRecord from './pages/DeleteRecord';
 import UpdateProfile from './pages/UpdateProfile';
 import Login from './pages/Login';
 import IsPrivate from './components/IsPrivate';
+import About from './pages/About';
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 				<main className='py-5 justify-center ' id='main-content'>
 					<Routes>
 						<Route path='/' element={<Homepage />} />
+						<Route path='/about' element={<About />} />
 						<Route path='/records' element={<AllRecords />} />
 						<Route
 							path='/admin'
