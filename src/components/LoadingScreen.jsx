@@ -13,10 +13,18 @@ const LoadingScreen = ({ message, setMessage }) => {
 			});
 
 		const showMessages = async () => {
-			await updateMessage('So, how is your day going?...', 2000);
+			await updateMessage('So, how is your day going?...', 4000);
 			await updateMessage('This might take a moment...', 3000);
 			await updateMessage(`So, you're using ${browserName} version ${browserVersion}, huh? Cool stuff.`, 2000);
 			await updateMessage('*whistles in Pacman*', 3000);
+			await updateMessage('Almost there...', 4000);
+			await updateMessage('What do you call a magic dog?', 3000);
+			await updateMessage('A Labracadabrador.', 3000);
+			await updateMessage('I know, I know, I\'m hilarious.', 3000);
+			await updateMessage('Just a few more seconds...', 3000);
+			await updateMessage('I\'m sure you\'re getting bored by now...', 3000);
+			await updateMessage('I\'m sorry, I\'m doing my best...', 3000);
+			await updateMessage('I\'m just a simple loading screen...', 3000);
 		};
 
 		showMessages();
