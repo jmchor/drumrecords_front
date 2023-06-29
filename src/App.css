@@ -37,6 +37,29 @@ body {
 	height: 80vh;
 }
 
+.about {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 90vw;
+	gap: 1em;
+	text-align: justify;
+}
+
+.about p {
+	width: 80%;
+	padding: 1em;
+	font-size: 22px;
+}
+
+.about ol {
+	width: 60%;
+	padding: 1em;
+	font-size: larger;
+}
+
 @keyframes logo-spin {
 	from {
 		transform: rotate(0deg);
@@ -99,12 +122,51 @@ body {
 		height: 80vh;
 		width: 100vw;
 	}
+
+	.about {
+		text-align: center;
+	}
+
+	.about h1 {
+		font-size: 2em;
+	}
+
+	.about p {
+		width: 100%;
+		padding: 0.5em;
+		font-size: 1.2em;
+	}
+
+	.about ol {
+		width: 100%;
+		padding: 0.5em;
+		font-size: 1.2em;
+	}
 }
 
 @media (min-width: 376px) and (max-width: 560px) {
 	.expanded {
 		height: 80vh;
 		width: 100vw;
+	}
+	.about {
+		text-align: center;
+	}
+
+	.about h1 {
+		font-size: 2em;
+	}
+
+	.about p {
+		width: 100%;
+		padding: 0.5em;
+		font-size: 1.2em;
+	}
+
+	.about ol {
+		width: 100%;
+		padding: 0.5em;
+		font-size: 1.2em;
 	}
 }
 
@@ -113,12 +175,52 @@ body {
 		height: 80vh;
 		width: 80vw;
 	}
+
+	.about {
+		text-align: center;
+	}
+
+	.about h1 {
+		font-size: 2em;
+	}
+
+	.about p {
+		width: 100%;
+		padding: 0.5em;
+		font-size: 1.2em;
+	}
+
+	.about ol {
+		width: 100%;
+		padding: 0.5em;
+		font-size: 1.2em;
+	}
 }
 
 @media (min-width: 691px) and (max-width: 920px) {
 	.expanded {
 		height: 80vh;
 		width: 60vw;
+	}
+
+	.about {
+		text-align: center;
+	}
+
+	.about h1 {
+		font-size: 2em;
+	}
+
+	.about p {
+		width: 100%;
+		padding: 0.5em;
+		font-size: 1.2em;
+	}
+
+	.about ol {
+		width: 100%;
+		padding: 0.5em;
+		font-size: 1.2em;
 	}
 }
 
