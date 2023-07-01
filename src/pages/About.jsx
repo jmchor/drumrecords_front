@@ -8,7 +8,7 @@ const About = () => {
 				starting out, or simply a drumming enthusiast, drumRecords is here to cater to your needs. We understand the
 				challenges drummers face when it comes to finding new practice material, seeking inspiration, or figuring out
 				how to play a particular section of a song. That's why I have created drumRecords – your one-stop solution for
-				all things drumming.
+				all things drum practice.
 			</p>
 
 			<p>
@@ -20,9 +20,8 @@ const About = () => {
 			<p>
 				One of the unique features of drumRecords is the ability to embed Instagram URLs. I've made it incredibly
 				convenient for you to access a wide range of drumming videos from various sources. Our platform goes beyond what
-				the Instagram API offers, allowing you to easily save and access drumming videos that inspire you. Say goodbye
-				to scrolling through your Instagram feed and struggling to find that specific video you loved. With drumRecords,
-				you can store and organize your favorite drumming videos with ease.
+				the Instagram API offers, allowing you to easily access drumming videos that inspire you. Say goodbye
+				to scrolling through your Instagram feed and struggling to find that specific video you loved.
 			</p>
 
 			<p>Here's what drumRecords has to offer:</p>
@@ -43,7 +42,7 @@ const About = () => {
 			</ol>
 
 			<p>
-				I have utilized cutting-edge technologies to ensure a smooth and enjoyable experience on drumRecords. Our
+				I have utilized cutting-edge technologies to ensure a smooth and enjoyable experience on drumRecords. The
 				frontend is built with React and powered by Vite, providing a fast and responsive interface. I have incorporated
 				handy libraries like react-social-media-embed for easy embedding of social media links, react-device-detect for
 				some fun browser detection, and react-spinners to keep loading screens engaging.
