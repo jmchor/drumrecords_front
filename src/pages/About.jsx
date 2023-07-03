@@ -78,7 +78,8 @@ const About = () => {
             <br />
 
 			<footer>
-				<div>Copyright &copy; 2023 Johannes Chorzempa</div>
+				<div className="flex items-center gap-4" height={"50px"}>Copyright &copy; 2023 Johannes Chorzempa
+				<img className="w-12" src="images/jmchor_transp.png" alt="" /></div>
 			</footer>
 		</div>
 	);
